@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tiers">
+        <item name="1">Tier 1</item>
+        <item name="2">Tier 2</item>
+        <item name="3">Tier 3</item>
+    </string-array>
+</resources>
