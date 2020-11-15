@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "VistaLista"
+rootProject.name = "TierMaker"
