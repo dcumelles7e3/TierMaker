@@ -4,41 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".adapters.InputActivity">
+    tools:context=".activities.InputActivity">
 
     <EditText
         android:id="@+id/et_nom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:hint="Introdueix el nom"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="140dp"
+        android:hint="Introdueix el nom" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tier:"
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_below="@id/et_nom"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-       />
+        android:paddingHorizontal="30dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+
+
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/textView"
+   android:layout_weight="0.5" />
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/spinner"
+        android:layout_below="@id/linearlayout"
+        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:text="ADD"/>
-
-
+        android:text="ADD" />
 
 
 </RelativeLayout>

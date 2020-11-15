@@ -4,5 +4,6 @@
         <item name="1">Tier 1</item>
         <item name="2">Tier 2</item>
         <item name="3">Tier 3</item>
+        <item name="4">Tier 4</item>
     </string-array>
 </resources>

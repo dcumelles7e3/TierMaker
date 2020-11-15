@@ -17,16 +17,16 @@ import java.util.List;
 
 import cat.itb.vistalista.R;
 import cat.itb.vistalista.adapters.*;
+import cat.itb.vistalista.models.ItemList;
 import cat.itb.vistalista.models.ItemModel;
 
 public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
     private GridView gridView;
-    private List<String> names;
     private MyAdapter adapter;
     private MyAdapter adapterGrid;
-    private ItemModel im;
+    private ItemList itemList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,29 +34,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listView = (ListView) findViewById(R.id.list_view);
-        gridView = (GridView) findViewById(R.id.grid_view);
+      //  gridView = (GridView) findViewById(R.id.grid_view);
 
-        names = new ArrayList<String>(){{
-            add("Hola");
-            add("Ekisde");
-            add("Ekisde");
-            add("Ekisde");
-            add("Ekisde");
-            add("Ekisde");
-            add("Ekisde");
-            add("Ekisde");
-            add("Ekisde");
-            add("Ekisde");
-        }};
+        itemList = new ItemList();
+        itemList.afegirItem("Hola",1);
 
-
-
-        adapter = new MyAdapter(this,R.layout.list_item, names);
-        adapterGrid = new MyAdapter(this,R.layout.list_item, names);
+        adapter = new MyAdapter(this,R.layout.list_item, itemList);
 
         listView.setAdapter(adapter);
-
-
     }
 
     @Override
@@ -72,8 +57,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.add_item:
                 Intent input = new Intent(MainActivity.this, InputActivity.class);
                 startActivity(input);
+                finish();
+              //  adapter.notifyDataSetChanged();
 
-                adapter.notifyDataSetChanged();
 
                 return true;
             case R.id.grid_view:
@@ -84,5 +70,7 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+
     }
+
 }

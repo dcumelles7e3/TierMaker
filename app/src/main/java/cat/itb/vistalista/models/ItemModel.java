@@ -3,17 +3,33 @@ package cat.itb.vistalista.models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemModel {
-    private List<ItemModel> items = new ArrayList<>();
+import cat.itb.vistalista.R;
 
+public class ItemModel {
     private String nom;
-    private String tier;
+    private int tier;
     private int imatge;
 
-    public ItemModel(String nom, String tier, int imatge) {
+    public ItemModel(String nom, int tier) {
         this.nom = nom;
         this.tier = tier;
-        this.imatge = imatge;
+
+        switch (tier){
+            case 1:
+                this.imatge = R.drawable.t1img;
+                return;
+            case 2:
+                this.imatge = R.drawable.t2img;
+                return;
+            case 3:
+                this.imatge = R.drawable.t3img;
+                return;
+            case 4:
+                this.imatge = R.drawable.t4img;
+                return;
+            default:
+                this.imatge = 0;
+        }
     }
 
     public String getNom() {
@@ -24,11 +40,11 @@ public class ItemModel {
         this.nom = nom;
     }
 
-    public String getTier() {
+    public int getTier() {
         return tier;
     }
 
-    public void setTier(String tier) {
+    public void setTier(int tier) {
         this.tier = tier;
     }
 
