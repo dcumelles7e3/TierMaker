@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.InputActivity">
+    tools:context=".activities.InputActivity"
+    android:background="@color/background">
 
     <EditText
         android:id="@+id/et_nom"
@@ -12,42 +13,40 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="140dp"
-        android:hint="Introdueix el nom" />
+        android:hint="@string/introdueix_el_nom"
+        android:inputType="text"
+        android:maxLines="1" />
 
     <LinearLayout
         android:id="@+id/linearlayout"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_below="@id/et_nom"
-        android:paddingHorizontal="30dp"
-        android:orientation="horizontal">
+        android:layout_marginVertical="30dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="50dp">
 
         <ImageView
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            />
-
-
+            android:layout_margin="20dp"
+            android:layout_weight="1" />
 
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/textView"
-   android:layout_weight="0.5" />
+            android:layout_weight="0.5" />
     </LinearLayout>
-
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="170dp"
+        android:layout_height="70dp"
         android:layout_below="@id/linearlayout"
-        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:text="ADD" />
-
-
+        android:layout_marginTop="40dp"
+        android:text="ADD"
+        android:textSize="24sp" />
 </RelativeLayout>

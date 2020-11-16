@@ -1,11 +1,15 @@
 package cat.itb.vistalista.models;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import cat.itb.vistalista.R;
 
-public class ItemModel {
+public class ItemModel implements Comparable<ItemModel>{
     private String nom;
     private int tier;
     private int imatge;
@@ -54,5 +58,11 @@ public class ItemModel {
 
     public void setImatge(int imatge) {
         this.imatge = imatge;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Override
+    public int compareTo(ItemModel o) {
+        return Integer.compare(this.tier,o.getTier());
     }
 }

@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import cat.itb.vistalista.R;
 import cat.itb.vistalista.adapters.MyAdapter;
@@ -70,12 +71,16 @@ public class InputActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nom = et_nom.getText().toString();
-                int tier = (spinner.getSelectedItemPosition() + 1);   //La posició del spinner comença amb 0 aixi que incrementem 1
+                if (nom.matches("")) {
+                    Toast.makeText(InputActivity.this, "Has d'introduir un nom.", Toast.LENGTH_SHORT).show();
+                } else {
+                    int tier = (spinner.getSelectedItemPosition() + 1);   //La posició del spinner comença amb 0 aixi que incrementem 1
 
-                afegir(nom, tier);
-                Intent intent = new Intent(InputActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+                    afegir(nom, tier);
+                    Intent intent = new Intent(InputActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
     }

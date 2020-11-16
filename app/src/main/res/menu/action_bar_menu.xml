@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <item
         android:id="@+id/add_item"
         android:icon="@android:drawable/ic_menu_add"
-        android:title="Add Item"
+        android:title="@string/add_item"
         app:showAsAction="ifRoom"/>
     <item
-        android:id="@+id/list_view"
+        android:id="@+id/b_list_view"
         android:icon="@drawable/ic_list"
-        android:title="Vista Llista"
+        android:title="@string/list"
         app:showAsAction="ifRoom"
         android:visible="false"/>
     <item
-        android:id="@+id/grid_view"
+        android:id="@+id/b_grid_view"
         android:icon="@drawable/ic_grid"
-        android:title="Vista Llista"
-        app:showAsAction="ifRoom"
-        />
+        android:title="@string/grid"
+        app:showAsAction="ifRoom"/>
 
 </menu>

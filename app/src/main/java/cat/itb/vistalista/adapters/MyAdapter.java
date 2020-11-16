@@ -59,18 +59,26 @@ public class MyAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-
-        //String currentName = (String) getItem(position);
-        //holder.nameTextView.setText(currentName);
-        //int currentTier = (Integer) getItem(position);
-        //holder.tierImageView.setImageResource(currentTier);
-
         ItemModel item = (ItemModel) getItem(position);
         String nom = item.getNom();
         holder.nameTextView.setText(nom);
         int imatge = item.getImatge();
         holder.tierImageView.setImageResource(imatge);
-
+        int tier = item.getTier();
+        switch (tier) {
+            case 1:
+                convertView.setBackgroundColor(context.getResources().getColor(R.color.t1));
+                break;
+            case 2:
+                convertView.setBackgroundColor(context.getResources().getColor(R.color.t2));
+                break;
+            case 3:
+                convertView.setBackgroundColor(context.getResources().getColor(R.color.t3));
+                break;
+            case 4:
+                convertView.setBackgroundColor(context.getResources().getColor(R.color.t4));
+                break;
+        }
         return convertView;
     }
 

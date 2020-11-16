@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">VistaLista</string>
-
+    <string name="app_name">TierMaker</string>
+    <string name="add_item">Add Item</string>
+    <string name="list">List</string>
+    <string name="grid">Grid</string>
+    <string name="introdueix_el_nom">Introdueix el nom</string>
 </resources>
